@@ -1,0 +1,36 @@
+# This is for kubernetes master and node setup
+
+login to server
+
+Kubernetes Master Setup
+=======================
+copy master.sh to server and run that shell script 
+sh master
+
+K8s master setup is success
+
+# Get token -- generate token using below command
+
+kubeadm token create --print-join-command
+
+ex: 
+kubeadm join 172.31.93.113:6443 --token fxrt5n.8mmq5giqdvmrp15f --discovery-token-ca-cert-hash sha256:0b22a18cd1330bef13dc3fd3968f2b38d100433fd3ced449be23b13421212e18
+
+-- copy above code to node sh line 10 MASTER_JOIN_COMMAND=""
+
+MASTER_JOIN_COMMAND="kubeadm join 172.31.93.113:6443 --token fxrt5n.8mmq5giqdvmrp15f --discovery-token-ca-cert-hash sha256:0b22a18cd1330bef13dc3fd3968f2b38d100433fd3ced449be23b13421212e18"
+
+Node Servers Setup
+==================
+create  2 ubuntu t3.micro servers with 10 GB Memory
+
+
+copy node-setup.sh file to that server and run 
+
+sh node-setup.sh
+
+run in both servers to setup 2 node servers
+
+K8s node server setup is success
+
+===========
