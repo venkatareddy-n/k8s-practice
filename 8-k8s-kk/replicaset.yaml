@@ -24,7 +24,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: javawebappsvc
-  namespace: test-ns
+  namespace: prod
 spec:
   type: NodePort
   selector: 
