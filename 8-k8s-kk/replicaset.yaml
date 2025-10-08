@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: javawebapp
-        image: venkat2607/java-webapp:1.0
+        image: kkeducationb2/java-webapp:1.1
         ports:
         - containerPort: 8080
 ---
